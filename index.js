@@ -6,7 +6,7 @@ const json2csv = require("csvjson-json2csv");
 const error = chalk.bold.red;
 const success = chalk.keyword("green");
 
-(async () => {
+const getSchedule = async () => {
   try {
     // open the headless browser
     let browser = await puppeteer.launch({ 
@@ -47,4 +47,6 @@ const success = chalk.keyword("green");
     await browser.close();
     console.log(error("Browser Closed"));
   }
-})();
+};
+
+getSchedule();
